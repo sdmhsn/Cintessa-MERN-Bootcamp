@@ -1,0 +1,29 @@
+h1 {
+  color: red;
+}
+
+#label1 {
+  color: purple;
+}
+
+.label2 {
+  color: pink;
+}
+
+/* 
+table {
+  border: 2px solid black;
+}
+tr td {
+  border: 1px solid black;
+}
+tr th {
+  border: 1px solid black;
+} */
+
+table,
+tr,
+th,
+td {
+  border: 2px solid black;
+}
