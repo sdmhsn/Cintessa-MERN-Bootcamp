@@ -1,0 +1,26 @@
+h1{
+    color:red;
+}
+#label{
+    color: #672727;
+}
+.label-2{
+    color: red;
+}
+tr td{
+    border: 1px solid;
+    border-color: blue;
+    border-radius: 1px;
+}
+tr th{
+    border: 1px solid #000000;
+}
+.box{
+    width: 500px;
+    height: 500px;
+    border: 1px solid;
+    display: flex;
+}
+.content-box{
+    border: 1px solid #aaaaaa;
+}
