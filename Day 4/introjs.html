@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="box-form">
+        <div>
+            <div>
+                <label id="labelNilaiA">Nilai A</label><br>
+                <input type="text" id="nilaiA" value="10">
+            </div>
+            <div>
+                <label id="labelNilaiB">Nilai B</label><br>
+            <input type="text" id="nilaiB" value="11"><br>
+            </div>
+        </div>
+        
+        
+        <button type="button" id="btn">Submit</button>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script>
+        // console.log("Hello JS")
+        var nilaiA = document.getElementById('nilaiA')
+        var btn = document.getElementById('btn')
+        // var nilaiB = document.getElementById('nilaiB')
+        // var labelNilaiA = document.getElementById('labelNilaiA')
+        var boxForm = document.getElementById('box-form')
+        // var newElement = document.createElement('img')
+        // newElement.src = 'img.jpg'
+        // newElement.width = 100
+        // newElement.height=10
+        // newElement.id = "image"
+        // boxForm.appendChild(newElement)
+        // var image = document.getElementById('image')
+        // boxForm.removeChild(image)
+        btn.addEventListener('click',function() {
+            alert('you click me!')
+        })
+        nilaiA.addEventListener('key',function() {
+            alert('you click me!')
+        })
+        /*
+            click
+            submit
+            keyup
+            keydown
+            mouseover
+            mousemove
+            mouseout
+        */
+
+    </script>
+    <script src="intro.js?v=1"></script>
+    <script src="intro2.js"></script>
+</body>
+</html>
