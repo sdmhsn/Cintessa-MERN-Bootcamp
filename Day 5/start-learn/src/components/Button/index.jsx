@@ -1,9 +1,9 @@
 import React from 'react';
 
-export const Button = (props) => {
+export default function Button() {
   return (
     <div>
-      <button>{props.children}</button>
+      <button></button>
     </div>
   );
-};
+}
