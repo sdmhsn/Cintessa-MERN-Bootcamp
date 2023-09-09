@@ -6,7 +6,9 @@ import Text from './components/Text';
 const App = () => {
   return (
     <>
-      <Button>click me!</Button>
+      <Button class="button">
+        <strong>click me!</strong>
+      </Button>
       <Text>number</Text>
     </>
   );
