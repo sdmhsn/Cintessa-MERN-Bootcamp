@@ -6,8 +6,8 @@ import Text from './components/Text';
 const App = () => {
   return (
     <>
-      <Button text="click me!" />
-      <Text text="number" />
+      <Button>click me!</Button>
+      <Text>number</Text>
     </>
   );
 };
