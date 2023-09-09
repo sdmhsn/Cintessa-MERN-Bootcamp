@@ -1,15 +1,15 @@
-import './App.css';
+import React from 'react';
 
-import { Button } from './components/Button';
+import Button from './components/Button';
 import Text from './components/Text';
 
-function App() {
+const App = () => {
   return (
     <>
-      <Text text="hello"></Text>
-      <Button>Click me!!!</Button>
+      <Button text="click me!" />
+      <Text text="number" />
     </>
   );
-}
+};
 
 export default App;

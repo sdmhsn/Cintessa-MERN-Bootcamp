@@ -2,6 +2,6 @@ import React, { Component } from 'react';
 
 export default class Text extends Component {
   render() {
-    return <div>Text</div>;
+    return <div>{this.props.text}</div>;
   }
 }
