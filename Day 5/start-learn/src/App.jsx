@@ -9,8 +9,8 @@ const App = () => {
   return (
     <>
       <button onClick={() => setCount(count + 1)}>Click me!</button>
-
-      <Text>{count}</Text>
+      <p>Counter P: {count}</p>
+      <Text></Text>
     </>
   );
 };
