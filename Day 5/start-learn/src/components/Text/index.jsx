@@ -12,6 +12,14 @@ export default class Text extends Component {
     this.setState({ counter: this.state.counter + 1 });
   };
 
+  componentDidMount = () => {
+    console.log('component did mount');
+  };
+
+  componentDidUpdate = () => {
+    console.log('component did update');
+  };
+
   render() {
     return (
       <>
