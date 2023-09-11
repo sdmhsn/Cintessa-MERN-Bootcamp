@@ -8,14 +8,14 @@ export default class Text extends Component {
     };
   }
 
+  incrementCounter = () => {
+    this.setState({ counter: this.state.counter + 1 });
+  };
+
   render() {
     return (
       <>
-        <button
-          onClick={() => this.setState({ counter: this.state.counter + 1 })}
-        >
-          Click Me!
-        </button>
+        <button onClick={this.incrementCounter}>Click Me!</button>
         <p>counter p: {this.state.counter}</p>
       </>
     );
