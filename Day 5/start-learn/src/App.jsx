@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 import Button from './components/Button';
 import Text from './components/Text';
@@ -9,6 +9,10 @@ const App = () => {
   const increment = () => {
     setCount(count + 1);
   };
+
+  useEffect(() => {
+    console.log('effect');
+  });
 
   return (
     <>
