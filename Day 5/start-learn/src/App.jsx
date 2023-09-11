@@ -17,7 +17,7 @@ const App = () => {
 
   useEffect(() => {
     console.log('effect');
-  }, [count]); // only applies to count state
+  }, []); // only run once
 
   return (
     <>
