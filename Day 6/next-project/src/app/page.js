@@ -1,4 +1,5 @@
 import './main.css';
+import style from './text.module.css';
 
 export default function Home() {
   const mainStyle = {
@@ -12,6 +13,7 @@ export default function Home() {
     <>
       <div style={mainStyle}>
         <h3 className="textRed">Halo</h3>
+        <h3 className={style.textRed}>Halo</h3>
       </div>
     </>
   );
