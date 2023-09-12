@@ -1,9 +1,7 @@
-import Image from 'next/image';
-import styles from './page.module.css';
+import './main.css';
 
 export default function Home() {
   const mainStyle = {
-    color: 'red',
     background: 'blue',
     border: '1px solid #000',
     width: 100,
@@ -12,7 +10,9 @@ export default function Home() {
 
   return (
     <>
-      <div style={mainStyle}></div>
+      <div style={mainStyle}>
+        <h3 className="textRed">Halo</h3>
+      </div>
     </>
   );
 }
