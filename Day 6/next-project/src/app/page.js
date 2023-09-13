@@ -1,5 +1,7 @@
 import './main.css';
 import style from './text.module.css';
+import Button from '@/components/Button';
+import '@/styles/master.css';
 
 export default function Home() {
   const mainStyle = {
@@ -15,6 +17,7 @@ export default function Home() {
         <h3 className="textRed">Halo</h3>
         <h3 className={style.textRed}>Halo</h3>
       </div>
+      <Button />
     </>
   );
 }
