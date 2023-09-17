@@ -1,23 +1,18 @@
-import './main.css';
-import style from './text.module.css';
-import Button from '@/components/Button';
-import '@/styles/master.css';
+import React from 'react';
+
+import { Button, ConfigProvider } from 'antd';
+
+import theme from '@/utils/themeConfig';
+// import theme from '../utils/themeConfig'; // this also worked
 
 export default function Home() {
-  const mainStyle = {
-    background: 'blue',
-    border: '1px solid #000',
-    width: 100,
-    height: '20em',
-  };
-
   return (
     <>
-      <div style={mainStyle}>
-        <h3 className="textRed">Halo</h3>
-        <h3 className={style.textRed}>Halo</h3>
-      </div>
-      <Button />
+      <ConfigProvider theme={theme}>
+        <div className="App">
+          <Button type="primary">Button</Button>
+        </div>
+      </ConfigProvider>
     </>
   );
 }
