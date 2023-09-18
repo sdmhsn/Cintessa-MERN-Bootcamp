@@ -1,12 +1,12 @@
 import React from 'react';
-import { Inter } from 'next/font/google';
+import { Epilogue } from 'next/font/google';
 
 import StyledComponentsRegistry from './lib/AntdRegistry';
 
 import './globals.css';
 // import '@/app/globals.css'; // this also worked
 
-const inter = Inter({ subsets: ['latin'] });
+const font = Epilogue({ subsets: ['latin'] });
 
 export const metadata = {
   title: 'Create Next App',
@@ -15,7 +15,7 @@ export const metadata = {
 
 const RootLayout = ({ children }) => (
   <html lang="en">
-    <body className={inter.className}>
+    <body className={font.className}>
       <StyledComponentsRegistry>{children}</StyledComponentsRegistry>
     </body>
   </html>
