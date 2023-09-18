@@ -12,7 +12,13 @@ export default function Home() {
     <>
       <ConfigProvider theme={theme}>
         <div className="App">
+          <Button type="primary" size="small">
+            Button
+          </Button>
           <Button type="primary">Button</Button>
+          <Button type="primary" size="large">
+            Button
+          </Button>
         </div>
       </ConfigProvider>
     </>

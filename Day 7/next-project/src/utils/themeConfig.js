@@ -5,11 +5,16 @@ const themeConfig = {
   },
   components: {
     Button: {
+      borderRadiusSM: 0,
       borderRadius: 0,
+      borderRadiusLG: 0,
+      controlHeightSM: 42,
       controlHeight: 50,
+      controlHeightLG: 57,
       colorPrimary: '#4640DE',
       colorPrimaryHover: '#CCCCF5',
       fontSize: 16,
+      fontSizeLG: 18,
     },
   },
 };
