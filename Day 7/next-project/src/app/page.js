@@ -4,6 +4,8 @@ import React from 'react';
 
 import { Button, ConfigProvider, Typography, Input } from 'antd';
 
+import { SearchOutlined } from '@ant-design/icons';
+
 import theme from '@/utils/themeConfig';
 // import theme from '../utils/themeConfig'; // this also worked
 
@@ -36,6 +38,29 @@ export default function Home() {
 
         <div className="input-div">
           <Input placeholder="This is placeholder" />
+          <Input
+            placeholder="This is placeholder"
+            prefix={
+              /* prefix: icon position in left */
+              <SearchOutlined
+                style={{
+                  color: '#A8ADB7',
+                  fontSize: '24px',
+                  paddingRight: '16px',
+                }}
+              />
+            }
+            suffix={
+              /* suffix: icon position in right */
+              <SearchOutlined
+                style={{
+                  color: '#A8ADB7',
+                  fontSize: '24px',
+                  paddingLeft: '16px',
+                }}
+              />
+            }
+          />
         </div>
       </ConfigProvider>
     </>
