@@ -19,6 +19,13 @@ const themeConfig = {
       contentFontSize: 16,
       contentFontSizeLG: 18,
     },
+    Typography: {
+      fontSizeHeading1: 72,
+      fontSizeHeading2: 48,
+      fontSizeHeading3: 32,
+      fontSizeHeading4: 24,
+      fontSizeHeading5: 20,
+    },
   },
 };
 

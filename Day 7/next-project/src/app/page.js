@@ -1,11 +1,15 @@
+'use client';
+
 import React from 'react';
 
-import { Button, ConfigProvider } from 'antd';
+import { Button, ConfigProvider, Typography } from 'antd';
 
 import theme from '@/utils/themeConfig';
 // import theme from '../utils/themeConfig'; // this also worked
 
 import '@/styles/master.css';
+
+const { Title, Text } = Typography;
 
 export default function Home() {
   return (
@@ -19,6 +23,15 @@ export default function Home() {
           <Button type="primary" size="large">
             Button
           </Button>
+        </div>
+
+        <div className="font-div">
+          <Title>h1. Ant Design</Title>
+          <Title level={2}>h2. Ant Design</Title>
+          <Title level={3}>h3. Ant Design</Title>
+          <Title level={4}>h4. Ant Design</Title>
+          <Title level={5}>h5. Ant Design</Title>
+          <Text>Ant Design (default)</Text>
         </div>
       </ConfigProvider>
     </>
