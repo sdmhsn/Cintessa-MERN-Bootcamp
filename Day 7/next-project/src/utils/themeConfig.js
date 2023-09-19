@@ -13,8 +13,11 @@ const themeConfig = {
       controlHeightLG: 57,
       colorPrimary: '#4640DE',
       colorPrimaryHover: '#CCCCF5',
-      fontSize: 16,
-      fontSizeLG: 18,
+      // fontSize: 16,
+      // fontSizeLG: 18,
+      contentFontSizeSM: 14,
+      contentFontSize: 16,
+      contentFontSizeLG: 18,
     },
   },
 };
