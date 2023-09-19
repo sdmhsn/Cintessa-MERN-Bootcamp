@@ -2,7 +2,7 @@
 
 import React from 'react';
 
-import { Button, ConfigProvider, Typography } from 'antd';
+import { Button, ConfigProvider, Typography, Input } from 'antd';
 
 import theme from '@/utils/themeConfig';
 // import theme from '../utils/themeConfig'; // this also worked
@@ -32,6 +32,10 @@ export default function Home() {
           <Title level={4}>h4. Ant Design</Title>
           <Title level={5}>h5. Ant Design</Title>
           <Text>Ant Design (default)</Text>
+        </div>
+
+        <div className="input-div">
+          <Input placeholder="This is placeholder" />
         </div>
       </ConfigProvider>
     </>

@@ -26,6 +26,12 @@ const themeConfig = {
       fontSizeHeading4: 24,
       fontSizeHeading5: 20,
     },
+    Input: {
+      paddingBlock: 12,
+      paddingInline: 16,
+      borderRadius: 0,
+      colorPrimaryHover: '#4640DE',
+    },
   },
 };
 
