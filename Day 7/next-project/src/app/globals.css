@@ -2,6 +2,8 @@
   display: flex;
   gap: 10px;
 }
-.ant-btn.ant-btn-sm {
+.ant-btn.btn-small {
   font-size: 14px;
+  height: 42px;
+  padding: 8px 7px;
 }
