@@ -1,6 +1,8 @@
 import React from 'react';
 import { Epilogue } from 'next/font/google';
 
+import ReduxProvider from '@/redux/ReduxProvider';
+
 import StyledComponentsRegistry from './lib/AntdRegistry';
 
 import './globals.css';
@@ -16,9 +18,15 @@ export const metadata = {
 const RootLayout = ({ children }) => (
   <html lang="en">
     <body className={font.className}>
-      <StyledComponentsRegistry>{children}</StyledComponentsRegistry>
+      <ReduxProvider>
+        <StyledComponentsRegistry>{children}</StyledComponentsRegistry>
+      </ReduxProvider>
     </body>
   </html>
 );
 
 export default RootLayout;
+
+// notes:
+// why we can't set the RootLayout to a client component (The root layout is a Server Component by default and can not be set to a Client Component --> https://nextjs.org/docs/app/building-your-application/routing/pages-and-layouts#root-layout-required)
+// we should separate the redux provider from RootLayout server component, because the redux provider need to set as a client component ('use client')
