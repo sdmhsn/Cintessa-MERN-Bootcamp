@@ -11,6 +11,9 @@ import theme from '@/utils/themeConfig';
 
 import '@/styles/master.css';
 
+import { store } from '@/redux';
+console.log(store.getState().blog); // blog reducer data
+
 const { Title, Text } = Typography;
 
 export default function Home() {
