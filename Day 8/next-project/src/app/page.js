@@ -11,12 +11,14 @@ import theme from '@/utils/themeConfig';
 
 import '@/styles/master.css';
 
-import { store } from '@/redux';
-console.log(store.getState().blog); // blog reducer data
+import { useSelector } from 'react-redux';
 
 const { Title, Text } = Typography;
 
 export default function Home() {
+  const dataReducerBlog = useSelector((state) => state.blog);
+  console.log(dataReducerBlog); // sample of blog reducer contents: { "loading": false, "blog": [ { "title": "test", "description": "test" } ], "blogDetail": [ { "title": "test2", "description": "test2" } ] }
+
   return (
     <>
       <ConfigProvider theme={theme}>
