@@ -11,19 +11,33 @@ import theme from '@/utils/themeConfig';
 
 import '@/styles/master.css';
 
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+
+import { updateBlog } from '@/redux/blog/action';
+
+import { useEffect } from 'react';
 
 const { Title, Text } = Typography;
 
 export default function Home() {
-  const dataReducerBlog = useSelector((state) => state.blog);
-  console.log(dataReducerBlog); // sample of blog reducer contents: { "loading": false, "blog": [ { "title": "test", "description": "test" } ], "blogDetail": [ { "title": "test2", "description": "test2" } ] }
+  const { blog } = useSelector((state) => state.blog);
+  const dispatch = useDispatch();
+
+  const updateData = () => {
+    const data = [{ title: 'test1', description: 'test1' }]; // input data
+    dispatch(updateBlog(data));
+  };
+
+  // data logging
+  useEffect(() => {
+    console.log(blog);
+  }, [blog]);
 
   return (
     <>
       <ConfigProvider theme={theme}>
         <div className="App">
-          <Button type="primary" size="small">
+          <Button type="primary" size="small" onClick={() => updateData()}>
             Button
           </Button>
           <Button type="primary">Button</Button>
