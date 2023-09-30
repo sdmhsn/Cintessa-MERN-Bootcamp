@@ -10,6 +10,11 @@ export default function reducer(state = initialState, action) {
         ...state,
         blog: action.payload.blog,
       };
+    case 'blog_detail_success':
+      return {
+        ...state,
+        blogDetail: action.payload.blogDetail,
+      };
     default:
       return state;
   }

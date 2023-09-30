@@ -13,14 +13,14 @@ import '@/styles/master.css';
 
 import { useSelector, useDispatch } from 'react-redux';
 
-import { updateBlog } from '@/redux/blog/action';
+import { updateBlog, updateBlogDetail } from '@/redux/blog/action';
 
 import { useEffect } from 'react';
 
 const { Title, Text } = Typography;
 
 export default function Home() {
-  const { blog } = useSelector((state) => state.blog);
+  const { blog, blogDetail } = useSelector((state) => state.blog);
   const dispatch = useDispatch();
 
   const updateData = () => {
@@ -28,10 +28,16 @@ export default function Home() {
     dispatch(updateBlog(data));
   };
 
+  const updateDataDetail = () => {
+    const data = [{ title: 'test2', description: 'test2' }];
+    dispatch(updateBlogDetail(data));
+  };
+
   // data logging
   useEffect(() => {
     console.log(blog);
-  }, [blog]);
+    console.log(blogDetail);
+  }, [blog, blogDetail]);
 
   return (
     <>
@@ -40,7 +46,9 @@ export default function Home() {
           <Button type="primary" size="small" onClick={updateData}>
             Update Blog
           </Button>
-          <Button type="primary">Button</Button>
+          <Button type="primary" onClick={updateDataDetail}>
+            Update Blog Detail
+          </Button>
           <Button type="primary" size="large">
             Button
           </Button>

@@ -7,3 +7,13 @@ export const updateBlog = (data) => async (dispatch) => {
     },
   });
 };
+
+export const updateBlogDetail = (data) => async (dispatch) => {
+  dispatch({
+    type: 'blog_detail_success',
+    payload: {
+      blogDetail: data,
+      loading: false,
+    },
+  });
+};
