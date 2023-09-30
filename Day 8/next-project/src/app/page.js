@@ -37,8 +37,8 @@ export default function Home() {
     <>
       <ConfigProvider theme={theme}>
         <div className="App">
-          <Button type="primary" size="small" onClick={() => updateData()}>
-            Button
+          <Button type="primary" size="small" onClick={updateData}>
+            Update Blog
           </Button>
           <Button type="primary">Button</Button>
           <Button type="primary" size="large">
