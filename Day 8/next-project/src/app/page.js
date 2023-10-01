@@ -24,8 +24,8 @@ export default function Home() {
   const dispatch = useDispatch();
 
   const updateData = () => {
-    const data = [{ title: 'test1', description: 'test1' }]; // input data
-    dispatch(updateBlog(data));
+    // input data is on updateBlog in blog action
+    dispatch(updateBlog());
   };
 
   const updateDataDetail = () => {
