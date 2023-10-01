@@ -1,6 +1,7 @@
 const initialState = {
   loading: false,
   blog: [],
+  blogDetail: [],
 };
 
 export default function reducer(state = initialState, action) {
