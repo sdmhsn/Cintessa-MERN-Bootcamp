@@ -1,4 +1,7 @@
-export const updateBlog = (data) => async (dispatch) => {
+import { serviceGetBlog } from '@/service/blog';
+
+export const updateBlog = () => async (dispatch) => {
+  const { data } = await serviceGetBlog();
   dispatch({
     type: 'blog_success',
     payload: {
