@@ -5,11 +5,16 @@ const bodyParser = require('body-parser'); // body-parser is already in availabl
 
 // middleware
 app.use(bodyParser.json()); // body-parser middleware
+app.use((req, res, next) => {
+  console.log('is middleware');
+  next();
+}); // custom middleware. middleware position should is on the top
 
 // handling GET request to a root path ('/')
 app.get('/', (req, res) => {
   // res.send('Hai! Welcome to Home page');
   // console.log(req);
+  console.log('response GET');
 
   const data = {
     method: 'GET',
@@ -22,6 +27,7 @@ app.get('/', (req, res) => {
 // handling POST request to a root path ('/')
 app.post('/', (req, res) => {
   //   console.log(req.body);
+  console.log('response POST');
 
   const data = {
     method: 'POST',
