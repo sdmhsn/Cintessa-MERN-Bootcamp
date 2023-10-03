@@ -30,6 +30,15 @@ app.put('/', (req, res) => {
   res.send(data);
 });
 
+// handling DELETE request to a root path ('/')
+app.delete('/', (req, res) => {
+  const data = {
+    method: 'DELETE',
+  };
+
+  res.send(data);
+});
+
 app.listen(port, () => {
   console.log(`Server running in port: ${port}`);
 });
