@@ -5,8 +5,11 @@ const port = 3000;
 // handling GET request to a root path ('/')
 app.get('/', (req, res) => {
   // res.send('Hai! Welcome to Home page');
+  // console.log(req);
+
   const data = {
     method: 'GET',
+    body: req.query, // query: { id: '1' },
   };
 
   res.send(data);
