@@ -1,6 +1,10 @@
 const express = require('express');
 const app = express();
 const port = 3000;
+const bodyParser = require('body-parser'); // body-parser is already in available express
+
+// middleware
+app.use(bodyParser.json()); // body-parser middleware
 
 // handling GET request to a root path ('/')
 app.get('/', (req, res) => {
@@ -17,8 +21,11 @@ app.get('/', (req, res) => {
 
 // handling POST request to a root path ('/')
 app.post('/', (req, res) => {
+  //   console.log(req.body);
+
   const data = {
     method: 'POST',
+    body: req.body,
   };
 
   res.send(data);
