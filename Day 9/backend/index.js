@@ -21,6 +21,15 @@ app.post('/', (req, res) => {
   res.send(data);
 });
 
+// handling PUT request to a root path ('/')
+app.put('/', (req, res) => {
+  const data = {
+    method: 'PUT',
+  };
+
+  res.send(data);
+});
+
 app.listen(port, () => {
   console.log(`Server running in port: ${port}`);
 });
