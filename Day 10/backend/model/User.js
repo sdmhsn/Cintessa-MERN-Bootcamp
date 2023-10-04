@@ -1,5 +1,7 @@
 import mongoose from 'mongoose';
 
+import bcrypt from 'bcrypt';
+
 const { Schema } = mongoose;
 
 const User = new Schema(
@@ -25,5 +27,11 @@ const User = new Schema(
   },
   { timeStamp: true }
 );
+
+const HASH_ROUND = 10;
+User.pre('save', function (next) {
+  this.password = bcrypt.hashSync(this.password, HASH_ROUND);
+  next();
+});
 
 export default mongoose.model('User', User);
