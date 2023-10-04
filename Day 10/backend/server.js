@@ -1,5 +1,6 @@
 import express from 'express';
 import mongoose from 'mongoose';
+import bodyParser from 'body-parser';
 
 import authRouter from './router/auth.js'; // using ES6 should include .js extension
 
@@ -16,6 +17,7 @@ db.on('error', (error) => console.log(error));
 db.once('open', () => console.log('connection success'));
 
 // middleware
+app.use(bodyParser.json());
 app.use('/', authRouter);
 
 app.listen(port, () => {
