@@ -5,10 +5,10 @@ export const signin = async (req, res) => {
 };
 
 export const register = async (req, res) => {
-  const { name, email, password } = req.body;
+  const payload = req.body;
 
-  const user = await User.create({ name, email, password });
-  user.save();
+  const user = new User(payload);
+  await user.save();
 
   res.send({ message: 'Register Success' });
 };
