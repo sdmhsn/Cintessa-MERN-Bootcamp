@@ -3,6 +3,7 @@ import mongoose from 'mongoose';
 import bodyParser from 'body-parser';
 
 import authRouter from './router/auth.js'; // using ES6 should include .js extension
+import { decodeToken } from './middleware/auth.js';
 
 const app = express();
 const port = 3000;
@@ -19,6 +20,9 @@ db.once('open', () => console.log('connection success'));
 // middleware
 app.use(bodyParser.json());
 app.use('/', authRouter);
+app.use((req, res, next) => {
+  decodeToken(req, res, next); // decodeToken middleware should under the authRouter
+});
 
 app.listen(port, () => {
   console.log(`Server running in port: ${port}`);
