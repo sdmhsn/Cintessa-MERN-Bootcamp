@@ -4,6 +4,7 @@ import bodyParser from 'body-parser';
 
 import authRouter from './router/auth.js'; // using ES6 should include .js extension
 import { decodeToken } from './middleware/auth.js';
+import privateRouter from './router/private.js';
 
 const app = express();
 const port = 3000;
@@ -23,6 +24,7 @@ app.use('/', authRouter);
 app.use((req, res, next) => {
   decodeToken(req, res, next); // decodeToken middleware should under the authRouter
 });
+app.use('/', privateRouter);
 
 app.listen(port, () => {
   console.log(`Server running in port: ${port}`);
