@@ -4,6 +4,10 @@ import bcrypt from 'bcrypt';
 
 import jwt from 'jsonwebtoken';
 
+export const profile = async (req, res) => {
+  return res.send({ message: 'Success' });
+};
+
 export const signin = async (req, res) => {
   const { email, password } = req.body;
 
