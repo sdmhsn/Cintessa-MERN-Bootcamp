@@ -1,11 +1,17 @@
 import User from '../model/User.js';
+import { getToken } from '../middleware/auth.js';
 
 import bcrypt from 'bcrypt';
 
 import jwt from 'jsonwebtoken';
 
 export const profile = async (req, res) => {
-  return res.send({ message: 'Success' });
+  let token = getToken(req);
+
+  var verifyToken = jwt.verify(token, 'secret');
+  const user = await User.findById(verifyToken.data).exec();
+
+  return res.send({ message: 'Success', data: user, token: token });
 };
 
 export const signin = async (req, res) => {
