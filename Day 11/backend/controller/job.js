@@ -20,3 +20,9 @@ export const createJob = async (req, res) => {
 
   return res.send({ message: 'Job created', data: job });
 };
+
+export const job = async (req, res) => {
+  const job = await Job.find({});
+
+  return res.send(job);
+};
