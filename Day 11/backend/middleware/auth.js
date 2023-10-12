@@ -37,7 +37,8 @@ export const decodeToken = async (req, res, next) => {
     */
 
     if (user) {
-      return next(); // return next(): continue to return res.send({ message: 'Profile' }). this also to stop loading in postman
+      req.user = user; // to set req.user with user value to controller inside privateRouter() middleware (the custom middleware in server.js which have able by jwt / decodeToken() (line 26 - 27))
+      return next(); // return next(): continue to return res.send({ message: 'Profile' }) profile controller (user.js). this also to stop loading in postman
     }
 
     return res.send({ message: 'Authentication failed' });
