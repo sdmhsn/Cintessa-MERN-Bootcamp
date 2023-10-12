@@ -21,7 +21,7 @@ const Job = new Schema(
       required: true,
     },
   },
-  { timeStamp: true }
+  { timestamps: true }
 );
 
 export default mongoose.model('Job', Job);

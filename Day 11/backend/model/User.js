@@ -25,7 +25,7 @@ const User = new Schema(
       required: [true, 'Password wajib diisi'],
     },
   },
-  { timeStamp: true }
+  { timestamps: true }
 );
 
 const HASH_ROUND = 10;
