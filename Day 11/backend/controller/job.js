@@ -15,7 +15,8 @@ export const createJob = async (req, res) => {
   /* Sample 2: */
   const payload = req.body;
   // console.log(payload);
-  const job = await Job(payload);
+  // const job = await Job(payload);
+  const job = new Job(payload); // we can also create new job document using new Job(payload)
   await job.save();
 
   return res.send({ message: 'Job created', data: job });
