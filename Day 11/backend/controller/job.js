@@ -51,3 +51,12 @@ export const updateJob = async (req, res) => {
 
   return res.send({ message: 'Job updated', data: jobUpdated });
 };
+
+export const deleteJob = async (req, res) => {
+  const id = req.params.id;
+  // console.log(id);
+  const dataDeleted = await Job.findById(id);
+  const deletedJob = await Job.deleteOne({ _id: id });
+
+  return res.send({ message: 'Job deleted', data: dataDeleted });
+};
