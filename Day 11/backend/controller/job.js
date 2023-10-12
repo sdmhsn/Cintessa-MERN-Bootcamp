@@ -60,3 +60,11 @@ export const deleteJob = async (req, res) => {
 
   return res.send({ message: 'Job deleted', data: dataDeleted });
 };
+
+export const getJobById = async (req, res) => {
+  const id = req.params.id;
+  const job = await Job.findById(id);
+  // console.log(job);
+
+  return res.send(job);
+};
