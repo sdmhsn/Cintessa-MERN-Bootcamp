@@ -1,7 +1,19 @@
 import Application from '../model/Application.js';
 
-export const myApplication = async (req, res, next) => {
-  return res.send({ message: 'application' });
+export const myApplication = async (req, res) => {
+  const application = await Application.find({ user: req.user }).populate([
+    'job',
+    'user',
+  ]); // get/find data with user (req.user) base
+
+  /*
+  note:
+  await Application.find({ user: req.user }) != await Application.find()
+  */
+
+  const count = await Application.find({ user: req.user }).countDocuments();
+
+  return res.send({ message: 'my application', data: application, count });
 };
 
 export const createApplication = async (req, res) => {
