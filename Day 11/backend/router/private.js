@@ -6,6 +6,7 @@ import { job } from '../controller/job.js';
 import { updateJob } from '../controller/job.js';
 import { deleteJob } from '../controller/job.js';
 import { getJobById } from '../controller/job.js';
+import { createApplication } from '../controller/application.js';
 
 const router = express.Router();
 
@@ -15,5 +16,6 @@ router.get('/job', job);
 router.put('/job/:id', updateJob);
 router.delete('/job/:id', deleteJob);
 router.get('/job/:id', getJobById);
+router.post('/create-application', createApplication);
 
 export default router;
