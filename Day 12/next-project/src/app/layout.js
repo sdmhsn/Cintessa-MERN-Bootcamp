@@ -4,9 +4,13 @@ import { Epilogue } from 'next/font/google';
 import ReduxProvider from '@/redux/ReduxProvider';
 
 import StyledComponentsRegistry from './lib/AntdRegistry';
+import { ConfigProvider } from 'antd';
 
 import './globals.css';
 // import '@/app/globals.css'; // this also worked
+
+import theme from '@/utils/themeConfig';
+// import theme from '../utils/themeConfig'; // this also worked
 
 const font = Epilogue({ subsets: ['latin'] });
 
@@ -19,7 +23,9 @@ const RootLayout = ({ children }) => (
   <html lang="en">
     <body className={font.className}>
       <ReduxProvider>
-        <StyledComponentsRegistry>{children}</StyledComponentsRegistry>
+        <StyledComponentsRegistry>
+          <ConfigProvider theme={theme}>{children}</ConfigProvider>
+        </StyledComponentsRegistry>
       </ReduxProvider>
     </body>
   </html>
