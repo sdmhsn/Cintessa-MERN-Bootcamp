@@ -1,0 +1,17 @@
+.sidebar {
+  background-color: #f8f8fd !important;
+  box-shadow: 1px 0px 0px 0px #d3d6db important;
+}
+.layout-wrapper {
+  height: 100vh;
+}
+.header {
+  padding: 32px;
+  background: var(--neutrals-0, #fff) !important;
+  box-shadow: 0px -1px 0px 0px #d6ddeb inset !important;
+  height: 114px;
+}
+.content {
+  background-color: #ffffff;
+  padding: 0px 32px;
+}
