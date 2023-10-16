@@ -32,6 +32,10 @@ const themeConfig = {
       borderRadius: 0,
       colorPrimaryHover: '#4640DE',
     },
+    Checkbox: {
+      colorPrimary: '#4640DE',
+      colorPrimaryHover: '#4640DE',
+    },
   },
 };
 
