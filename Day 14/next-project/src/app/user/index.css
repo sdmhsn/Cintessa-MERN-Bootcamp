@@ -1,0 +1,21 @@
+.layout-wrapper {
+  height: 100vh;
+}
+.content {
+  background-color: #ffffff;
+  padding: 0px 32px;
+}
+.chart-box {
+  height: 152px;
+}
+.icon-card {
+  position: absolute;
+  width: 88px;
+  height: 88px;
+  right: 22px;
+  bottom: -20px;
+  background-repeat: no-repeat !important;
+}
+.ant-card {
+  border-radius: 0;
+}

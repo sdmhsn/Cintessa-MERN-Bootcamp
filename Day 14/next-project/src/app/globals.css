@@ -1,0 +1,21 @@
+.App {
+  display: flex;
+  gap: 10px;
+}
+.ant-btn.btn-small {
+  font-size: 14px;
+  height: 42px;
+  padding: 8px 7px;
+}
+.input-div {
+  width: 350px;
+}
+body {
+  margin: 0;
+}
+h3 {
+  margin: 0 !important;
+}
+h5 {
+  margin: 0 !important;
+}
