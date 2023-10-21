@@ -7,6 +7,7 @@ import { Layout } from 'antd';
 import './index.css';
 import SideBar from '@/components/organisms/Sidebar';
 import HeaderCustom from '@/components/organisms/Header';
+import DashboardContent from './DashboardContent';
 
 const { Footer, Content } = Layout;
 
@@ -17,8 +18,9 @@ export default function page() {
         <SideBar />
         <Layout>
           <HeaderCustom />
-          <Content className="content">Content</Content>
-          <Footer>Footer</Footer>
+          <Content className="content">
+            <DashboardContent />
+          </Content>
         </Layout>
       </Layout>
     </>
