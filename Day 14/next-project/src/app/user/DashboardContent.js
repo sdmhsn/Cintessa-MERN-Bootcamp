@@ -1,6 +1,9 @@
 import React from 'react';
 
 import { Typography, Row, Col, Card, Table } from 'antd';
+import { ArrowRightOutlined } from '@ant-design/icons';
+
+import Chart from 'react-apexcharts';
 
 import './index.css';
 
@@ -40,6 +43,16 @@ export default function DashboardContent() {
     },
   ];
 
+  const options = {
+    labels: ['Interviewed', 'Unsuitable'],
+    legend: {
+      show: false,
+    },
+    colors: ['#E9EBFD', '#4640DE'],
+  };
+
+  const series = [40, 60];
+
   return (
     <div>
       <div>
@@ -71,8 +84,32 @@ export default function DashboardContent() {
             <Title level={5} style={{ fontSize: 20 }}>
               Jobs Applied Status
             </Title>
-            <div className="chart-box"></div>
-            <Link>View All Applications</Link>
+            <div className="chart-box">
+              <div className="chart">
+                <Chart options={options} series={series} type="donut" />
+              </div>
+              <div className="series">
+                <div className="series-data">
+                  <div className="series-rect" style={{ background: '#E9EBFD' }}></div>
+                  <div>
+                    <Title level={5}>60%</Title>
+                    <Text>Unsuitable</Text>
+                  </div>
+                </div>
+
+                <div className="series-data">
+                  <div className="series-rect" style={{ background: '#4640DE' }}></div>
+                  <div>
+                    <Title level={5}>40%</Title>
+                    <Text>Interviewed</Text>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <Link className="link-strong">
+              View All Applications <ArrowRightOutlined />
+            </Link>
           </Card>
         </Col>
         <Col span={8}>
@@ -80,7 +117,7 @@ export default function DashboardContent() {
             <Title level={5} style={{ fontSize: 20 }}>
               Upcomming Interviews
             </Title>
-            <div className="chart-box"></div>
+            <div></div>
             <Link>View All Applications</Link>
           </Card>
         </Col>
