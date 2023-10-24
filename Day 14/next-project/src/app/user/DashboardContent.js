@@ -49,6 +49,14 @@ export default function DashboardContent() {
       show: false,
     },
     colors: ['#E9EBFD', '#4640DE'],
+    states: {
+      hover: {
+        filter: {
+          type: 'darken',
+          value: 0.15,
+        },
+      },
+    },
   };
 
   const series = [40, 60];
