@@ -1,0 +1,13 @@
+.schedule-box {
+  display: flex;
+  padding: 16px;
+  gap: 16px;
+  border-radius: 8px;
+  background: var(--brands-tertiary, #e9ebfd);
+}
+.schedule-img {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #c4c4c4;
+}

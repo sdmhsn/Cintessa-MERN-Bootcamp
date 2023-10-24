@@ -51,3 +51,16 @@
   font-weight: 600;
   line-height: 160%;
 }
+.schedule-body {
+  display: grid;
+  gap: 16px;
+}
+.schedule-header {
+  padding: 16px 24px;
+  position: relative;
+}
+.moving-schedule {
+  position: absolute;
+  top: 16px;
+  right: 24px;
+}

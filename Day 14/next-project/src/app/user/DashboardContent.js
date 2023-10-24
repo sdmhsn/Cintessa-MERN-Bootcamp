@@ -1,9 +1,11 @@
 import React from 'react';
 
 import { Typography, Row, Col, Card, Table } from 'antd';
-import { ArrowRightOutlined } from '@ant-design/icons';
+import { ArrowRightOutlined, LeftOutlined, RightOutlined } from '@ant-design/icons';
 
 import Chart from 'react-apexcharts';
+
+import ScheduleBox from '@/components/atoms/ScheduleBox';
 
 import './index.css';
 
@@ -98,7 +100,7 @@ export default function DashboardContent() {
               </div>
               <div className="series">
                 <div className="series-data">
-                  <div className="series-rect" style={{ background: '#E9EBFD' }}></div>
+                  <div className="series-rect" style={{ background: '#4640DE' }}></div>
                   <div>
                     <Title level={5}>60%</Title>
                     <Text>Unsuitable</Text>
@@ -106,7 +108,7 @@ export default function DashboardContent() {
                 </div>
 
                 <div className="series-data">
-                  <div className="series-rect" style={{ background: '#4640DE' }}></div>
+                  <div className="series-rect" style={{ background: '#E9EBFD' }}></div>
                   <div>
                     <Title level={5}>40%</Title>
                     <Text>Interviewed</Text>
@@ -125,8 +127,21 @@ export default function DashboardContent() {
             <Title level={5} style={{ fontSize: 20 }}>
               Upcomming Interviews
             </Title>
-            <div></div>
-            <Link>View All Applications</Link>
+            <div className="schedule-header">
+              <p>
+                <strong>Today, </strong>
+                26 November
+              </p>
+              <div className="moving-schedule">
+                <LeftOutlined />
+                <RightOutlined />
+              </div>
+            </div>
+            <div className="schedule-body">
+              <ScheduleBox />
+              <ScheduleBox />
+            </div>
+            <Link className="link-strong">View All Applications </Link>
           </Card>
         </Col>
       </Row>
