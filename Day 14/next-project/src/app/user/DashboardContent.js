@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Typography, Row, Col, Card, Table } from 'antd';
+import { Typography, Row, Col, Card, Table, Image, Tag } from 'antd';
 import { ArrowRightOutlined, LeftOutlined, RightOutlined } from '@ant-design/icons';
 
 import Chart from 'react-apexcharts';
@@ -15,33 +15,84 @@ export default function DashboardContent() {
   const dataSource = [
     {
       key: '1',
-      name: 'Mike',
-      age: 32,
-      address: '10 Downing Street',
+      name: 'FrontEnd Developer',
+      image: 'assets/company1.svg',
+      company: 'Telkom',
+      location: 'Jakarta',
+      type: 'Full-Time',
+      date_applied: '24 July 2022',
+      status: 'In Review',
     },
     {
       key: '2',
-      name: 'John',
-      age: 42,
-      address: '10 Downing Street',
+      name: 'BackEnd Developer',
+      image: 'assets/company2.svg',
+      company: 'Pertamina',
+      location: 'Surabaya',
+      type: 'Freelance',
+      date_applied: '23 July 2022',
+      status: 'Declined',
     },
   ];
 
   const columns = [
     {
+      title: 'Image',
+      dataIndex: 'image',
+      key: 'image',
+      render: (_, data) => {
+        console.log(data);
+        return <Image src={data.image} width={64} height={64} />;
+      },
+    },
+    {
       title: 'Name',
       dataIndex: 'name',
       key: 'name',
+      render: (_, data) => {
+        return (
+          <>
+            <Title level={5}>{data.name}</Title>
+            <Text>
+              {data.company} <span>&#183;</span> {data.location} <span>&#183;</span> {data.type}
+            </Text>
+          </>
+        );
+      },
     },
     {
-      title: 'Age',
-      dataIndex: 'age',
-      key: 'age',
+      title: 'Date Applied',
+      dataIndex: 'date_applied',
+      key: 'date_applied',
+      render: (_, data) => {
+        return (
+          <>
+            <Text strong>Date Applied</Text>
+            <br />
+            <Text>{data.date_applied}</Text>
+          </>
+        );
+      },
     },
     {
-      title: 'Address',
-      dataIndex: 'address',
-      key: 'address',
+      title: 'Status',
+      dataIndex: 'status',
+      key: 'status',
+      render: (_, data) => {
+        let colorStatus;
+
+        if (data.status === 'In Review') {
+          colorStatus = 'yellow';
+        } else if (data.status === 'Declined') {
+          colorStatus = 'red';
+        }
+
+        return (
+          <>
+            <Tag color={colorStatus}>{data.status}</Tag>
+          </>
+        );
+      },
     },
   ];
 
@@ -147,7 +198,7 @@ export default function DashboardContent() {
       </Row>
 
       <Card
-        title="Default size card"
+        title="Recent Applications History"
         extra={<a href="#">More</a>}
         style={{ width: '100%', marginTop: 32 }}>
         <Table dataSource={dataSource} columns={columns} showHeader={false} />
