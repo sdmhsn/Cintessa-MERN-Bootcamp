@@ -1,11 +1,12 @@
 import React from 'react';
 
-import { Image, Layout } from 'antd';
+import { Image, Layout, Typography } from 'antd';
 
 import './index.css';
 import { menuList, menuSetting } from '@/utils/menuConfig';
 
 const { Sider } = Layout;
+const { Link } = Typography;
 
 export default function SideBar() {
   return (
@@ -16,7 +17,9 @@ export default function SideBar() {
       <div className="sidebar-menu">
         <ul className="main-menu">
           {menuList.map((item) => (
-            <li key={item.key}>{item.label}</li>
+            <Link key={item.key} href={item.route}>
+              <li>{item.label}</li>
+            </Link>
           ))}
         </ul>
 
@@ -24,7 +27,9 @@ export default function SideBar() {
           <label>Settings</label>
           <ul className="main-menu">
             {menuSetting.map((item) => (
-              <li key={item.key}>{item.label}</li>
+              <Link key={item.key} href={item.route}>
+                <li key={item.key}>{item.label}</li>
+              </Link>
             ))}
           </ul>
         </div>
