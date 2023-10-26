@@ -6,27 +6,27 @@ export const menuList = [
   },
   {
     label: 'Messages',
-    route: '/user',
+    route: '/message',
     key: 'messages',
   },
   {
     label: 'My Applications',
-    route: '/user',
+    route: '/application',
     key: 'my-applications',
   },
   {
     label: 'Find Jobs',
-    route: '/user',
+    route: '/job',
     key: 'find-jobs',
   },
   {
     label: 'Browse Companies',
-    route: '/user',
+    route: '/company',
     key: 'browse-companies',
   },
   {
     label: 'My Public Profile',
-    route: '/user',
+    route: '/profile',
     key: 'my-public-profile',
   },
 ];
@@ -34,12 +34,12 @@ export const menuList = [
 export const menuSetting = [
   {
     label: 'Settings',
-    route: '/user',
+    route: '/setting',
     key: 'settings',
   },
   {
     label: 'Help Center',
-    route: '/user',
+    route: '/help',
     key: 'help-center',
   },
 ];
