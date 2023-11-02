@@ -46,5 +46,5 @@ export const register = async (req, res) => {
   const user = new User(payload);
   await user.save();
 
-  res.send({ message: 'Register Success' });
+  res.send({ message: 'Register Success', status: 200, success: true });
 };
