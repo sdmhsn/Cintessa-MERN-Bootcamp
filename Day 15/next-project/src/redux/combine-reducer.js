@@ -5,6 +5,7 @@ import { persistReducer } from 'redux-persist';
 import storage from './storage';
 
 import blog from './blog/reducer';
+import user from './user/reducer';
 
 const persistConfig = {
   key: 'root',
@@ -13,6 +14,7 @@ const persistConfig = {
 
 const combineReducer = combineReducers({
   blog,
+  user,
 });
 
 const persistedReducer = persistReducer(persistConfig, combineReducer);
