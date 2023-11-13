@@ -31,10 +31,15 @@ export const signin = async (req, res) => {
         'secret'
       );
 
-      return res.send({ message: 'Sign in Success', token: token });
+      return res.send({
+        message: 'Sign in Success',
+        token: token,
+        status: 200,
+        success: true,
+      });
     }
 
-    return res.send({ message: 'Sign in Failed' });
+    return res.send({ message: 'Sign in Failed', status: 401, success: false });
   }
 
   return res.send('Email or Password not found!');
@@ -46,5 +51,5 @@ export const register = async (req, res) => {
   const user = new User(payload);
   await user.save();
 
-  res.send({ message: 'Register Success', status: 200, success: true });
+  res.send({ message: 'Register Success', status: 201, success: true });
 };
